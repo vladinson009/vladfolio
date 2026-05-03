@@ -1,5 +1,9 @@
 {
   "HomePage": {
-    "title": "Velkommen verd!ASD"
+    "title": "Velkommen Verd!"
+  },
+  "Metadata": {
+    "title": "Vladimir's Porfølje",
+    "description": "Fullstack utvikler"
   }
 }

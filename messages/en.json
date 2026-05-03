@@ -1,5 +1,9 @@
 {
   "HomePage": {
     "title": "Hello world!ASD"
+  },
+  "Metadata": {
+    "title": "Vladimir's Porftolio",
+    "description": "Fullstack developer"
   }
 }
