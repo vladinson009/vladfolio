@@ -1,9 +1,16 @@
 {
   "HomePage": {
-    "title": "Velkommen Verd!"
+    "intro": "Hei, jeg er <author>Vladimir</author> — en <span>Fullstack-utvikler</span> med lidenskap for moderne <span>webutvikling</span>",
+    "description": "Jeg bygger skalerbare og vedlikeholdbare webapplikasjoner med fokus på ren arkitektur, moderne teknologier og intuitive brukeropplevelser. Fra responsive frontend-grensesnitt til sikre backend-systemer liker jeg å skape pålitelige og effektive digitale løsninger.",
+    "quote": "Den beste koden er ikke den som er mest kompleks, men den som er lettest å forstå",
+    "quoteAuthor": "Vladimir"
   },
   "Metadata": {
-    "title": "Vladimir's Porfølje",
-    "description": "Fullstack utvikler"
+    "title": "Vladimirs portefølje",
+    "description": "Fullstack-utvikler"
+  },
+  "Header": {
+    "about": "Om meg",
+    "home": "Hjem"
   }
 }

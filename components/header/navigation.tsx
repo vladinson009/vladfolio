@@ -9,23 +9,29 @@ import {
 } from '../ui/dropdown-menu';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
-const nav = [
-  {
-    href: '/about',
-    title: 'about',
-  },
-  {
-    href: '/more',
-    title: 'more',
-  },
-];
+type Nav = {
+  href: string;
+  title: string;
+}[];
 
 export function Nav() {
+  const t = useTranslations('Header');
   const [open, setOpen] = useState<boolean>(false);
+  const nav: Nav = [
+    {
+      href: '/about',
+      title: t('about'),
+    },
+    {
+      href: '/more',
+      title: t('home'),
+    },
+  ];
   return (
     <>
-      <DesktopNav />
+      <DesktopNav nav={nav} />
 
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger className="flex sm:hidden">
@@ -70,7 +76,7 @@ function ListItem(el: { href: string; title: string }) {
   );
 }
 
-function DesktopNav() {
+function DesktopNav({ nav }: { nav: Nav }) {
   return (
     <nav className="hidden sm:flex">
       <ul className="flex gap-3 bsg-red-400">
