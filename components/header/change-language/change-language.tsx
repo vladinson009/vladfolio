@@ -1,18 +1,15 @@
-import { useLocale } from 'next-intl';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
-import { routing } from '@/i18n/routing';
-import { Link } from '@/i18n/navigation';
+} from '../../ui/dropdown-menu';
 import { ChevronDown } from 'lucide-react';
 
-const localeMap = {
-  en: 'English',
-  no: 'Norsk',
-};
+import { routing } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
+import { localeMap } from '@/config/i18n';
 
 export function ChangeLanguage() {
   const locale = useLocale();

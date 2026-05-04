@@ -6,35 +6,33 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
+} from '../../ui/dropdown-menu';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { NAVIGATION_ITEMS } from '@/config/navigation';
 
-type Nav = {
+type HeadNavigation = {
   href: string;
   title: string;
 }[];
 
-export function Nav() {
+export function HeadNavigation() {
   const t = useTranslations('Header');
   const [open, setOpen] = useState<boolean>(false);
-  const nav: Nav = [
-    {
-      href: '/about',
-      title: t('about'),
-    },
-    {
-      href: '/more',
-      title: t('home'),
-    },
-  ];
+  const nav = NAVIGATION_ITEMS.map((item) => ({
+    href: item.href,
+    title: t(item.key),
+  }));
   return (
     <>
       <DesktopNav nav={nav} />
 
       <DropdownMenu open={open} onOpenChange={setOpen}>
-        <DropdownMenuTrigger className="flex sm:hidden">
+        <DropdownMenuTrigger
+          className="flex sm:hidden"
+          aria-label="Toggle mobile navigation"
+        >
           <TriggerIcon open={open} />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="flex flex-col sm:hidden">
@@ -76,7 +74,7 @@ function ListItem(el: { href: string; title: string }) {
   );
 }
 
-function DesktopNav({ nav }: { nav: Nav }) {
+function DesktopNav({ nav }: { nav: HeadNavigation }) {
   return (
     <nav className="hidden sm:flex">
       <ul className="flex gap-3 bsg-red-400">
