@@ -1,4 +1,4 @@
-import Container from '../container';
+import Container from '@/components/shared/container';
 import { BriefcaseBusinessIcon } from 'lucide-react';
 import { HeadNavigation } from './head-navigation/head-navigation';
 import { LanguageSwitcher } from './language-switcher/language-switcher';

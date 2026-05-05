@@ -1,6 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+
 import React from 'react';
+
 import Header from './header';
 
 // ============================================
@@ -13,7 +15,7 @@ vi.mock('next-intl', () => ({
     return translations[key];
   },
 }));
-vi.mock('../container', () => ({
+vi.mock('@/components/shared/container', () => ({
   default: ({
     children,
     className,

@@ -6,7 +6,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
-import Header from '@/components/header/header';
+import Header from '@/components/layouts/header/header';
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-sans' });
 const geistSans = Geist({

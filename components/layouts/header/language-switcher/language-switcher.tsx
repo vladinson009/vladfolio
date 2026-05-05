@@ -3,7 +3,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../../ui/dropdown-menu';
+} from '@/components/ui/dropdown-menu';
 import { ChevronDown } from 'lucide-react';
 
 import { routing } from '@/i18n/routing';

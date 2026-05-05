@@ -1,13 +1,15 @@
 import { expect, describe, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+
 import React from 'react';
+
 import { IntroduceSection } from './introduce-section';
 
 // ============================================
 // MOCKS
 // ============================================
 
-vi.mock('@/components/container', () => ({
+vi.mock('@/components/shared/container', () => ({
   default: ({
     children,
     className,
@@ -38,8 +40,8 @@ vi.mock('@/components/ui/badge', () => ({
   badgeVariants: () => '',
 }));
 
-vi.mock('@/components/ui/quote', () => ({
-  Quote: ({ text, author }: { text: string; author: string }) => (
+vi.mock('@/components/shared/quote', () => ({
+  default: ({ text, author }: { text: string; author: string }) => (
     <blockquote data-testid="quote">
       <p>{text}</p>
       <footer>{author}</footer>

@@ -6,7 +6,7 @@ interface QuoteProps {
   className?: string;
 }
 
-export function Quote({ text, author, className }: QuoteProps) {
+export default function Quote({ text, author, className }: QuoteProps) {
   return (
     <blockquote
       className={cn(

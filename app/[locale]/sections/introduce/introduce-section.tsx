@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Container from '@/components/container';
+import Container from '@/components/shared/container';
 import { Badge } from '@/components/ui/badge';
-import { Quote } from '@/components/ui/quote';
+import  Quote  from '@/components/shared/quote';
 import { useTranslations } from 'next-intl';
 
 export function IntroduceSection() {

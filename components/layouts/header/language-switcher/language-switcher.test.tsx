@@ -2,8 +2,9 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { LanguageSwitcher } from './language-switcher';
 import React from 'react';
+
+import { LanguageSwitcher } from './language-switcher';
 
 vi.mock('next-intl', () => ({
   useLocale: () => 'en',

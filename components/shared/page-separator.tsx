@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from 'lucide-react';
-import Container from '../container';
+import Container from './container';
 import { Button } from '../ui/button';
 import { Link } from '@/i18n/navigation';
 
