@@ -1,7 +1,7 @@
 import Container from '../container';
 import { BriefcaseBusinessIcon } from 'lucide-react';
 import { HeadNavigation } from './head-navigation/head-navigation';
-import { ChangeLanguage } from './change-language/change-language';
+import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -16,7 +16,7 @@ export default function Header() {
         </Link>
         <div className="flex items-center gap-10">
           <HeadNavigation />
-          <ChangeLanguage />
+          <LanguageSwitcher />
         </div>
       </Container>
     </div>
