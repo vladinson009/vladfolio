@@ -1,6 +1,6 @@
 {
   "HomePage": {
-    "intro": "Hei, jeg er <author>Vladimir</author> — en <span>Fullstack-utvikler</span> med lidenskap for moderne <span>webutvikling</span>",
+    "heading": "Hei, jeg er <author>Vladimir</author> — en <span>Fullstack-utvikler</span> med lidenskap for moderne <span>webutvikling</span>",
     "description": "Jeg bygger skalerbare og vedlikeholdbare webapplikasjoner med fokus på ren arkitektur, moderne teknologier og intuitive brukeropplevelser.",
     "quote": "Den beste koden er ikke den som er mest kompleks, men den som er lettest å forstå",
     "quoteAuthor": "Vladimir"

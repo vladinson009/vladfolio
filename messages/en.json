@@ -1,6 +1,6 @@
 {
   "HomePage": {
-    "intro": "Hi, I'm <author>Vladimir</author> — a <span>Full-Stack Developer</span> passionate about modern <span>web development</span>",
+    "heading": "Hi, I'm <author>Vladimir</author> — a <span>Full-Stack Developer</span> passionate about modern <span>web development</span>",
     "description": "I build scalable and maintainable web applications with a focus on clean architecture, modern technologies and intuitive user experiences.",
     "quote": "The best code is not the one that is the most complex, but the one that is most understandable",
     "quoteAuthor": "Vladimir"
