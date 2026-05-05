@@ -47,8 +47,8 @@ vi.mock('./head-navigation/head-navigation', () => ({
   HeadNavigation: () => <nav data-testid="head-navigation">Navigation</nav>,
 }));
 
-vi.mock('./change-language/change-language', () => ({
-  ChangeLanguage: () => <div data-testid="change-language">Language</div>,
+vi.mock('./language-switcher/language-switcher', () => ({
+  LanguageSwitcher: () => <div data-testid="language-switcher">Language</div>,
 }));
 
 vi.mock('@/i18n/navigation', () => ({
@@ -77,7 +77,7 @@ describe('Header Component', () => {
     render(<Header />);
 
     expect(screen.getByTestId('head-navigation')).toBeInTheDocument();
-    expect(screen.getByTestId('change-language')).toBeInTheDocument();
+    expect(screen.getByTestId('language-switcher')).toBeInTheDocument();
     expect(screen.getByTestId('briefcase-icon')).toBeInTheDocument();
   });
 
@@ -128,7 +128,7 @@ describe('Header Component', () => {
     const rightSection = container.querySelector('.gap-10');
     expect(rightSection).toBeInTheDocument();
     expect(rightSection).toContainElement(screen.getByTestId('head-navigation'));
-    expect(rightSection).toContainElement(screen.getByTestId('change-language'));
+    expect(rightSection).toContainElement(screen.getByTestId('language-switcher'));
   });
 
   // ✅ Test 8: Logo area has correct structure
