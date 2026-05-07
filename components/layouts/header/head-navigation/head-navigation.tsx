@@ -8,9 +8,11 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { NAVIGATION_ITEMS } from '@/config/navigation';
+
+import classes from './head-navigation.module.css';
 
 type HeadNavigation = {
   href: string;
@@ -77,11 +79,20 @@ function ListItem(el: { href: string; title: string }) {
 function DesktopNav({ nav }: { nav: HeadNavigation }) {
   return (
     <nav className="hidden sm:flex">
-      <ul className="flex gap-3 bsg-red-400">
-        {nav.map(({ href, title }) => (
-          <li key={href}>
+      <ul className="flex flex-row-reverse gap-3 bsg-red-400">
+        {nav.map(({ href, title }, index) => (
+          <li
+            className={classes['nav-item']}
+            style={
+              {
+                '--animation-delay': `${(index + 1) * 0.1}s `,
+              } as React.CSSProperties
+            }
+            key={href}
+          >
             <Link href={href} className="hover:text-primary">
               <span className="text-primary">#</span>
+
               <span>{title}</span>
             </Link>
           </li>

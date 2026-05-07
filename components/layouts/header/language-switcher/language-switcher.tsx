@@ -11,12 +11,14 @@ import { Link } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
 import { localeMap } from '@/config/i18n';
 
+import classes from './language-switcher.module.css';
+
 export function LanguageSwitcher() {
   const locale = useLocale();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="">
-        <div className="flex">
+        <div className={`${classes['nav-item']} flex hover:text-primary`}>
           <span>{locale.toUpperCase()}</span>
           <ChevronDown />
         </div>

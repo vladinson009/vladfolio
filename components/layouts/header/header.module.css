@@ -1,0 +1,32 @@
+/* Apply the animation to your title */
+.title-effect {
+  animation: fallDown 1s ease-in-out forwards;
+} /* Define the animation */
+.icon-effect {
+  animation: left-right 1s ease-in-out forwards;
+}
+@keyframes fallDown {
+  from {
+    /* Starting position - above the screen */
+    transform: translateY(-40px);
+    opacity: 0; /* Invisible at start */
+  }
+  to {
+    /* Ending position - normal position */
+    transform: translateY(0);
+    opacity: 1; /* Visible at end */
+  }
+}
+
+@keyframes left-right {
+  from {
+    /* Starting position - above the screen */
+    transform: translateX(-50px);
+    opacity: 0; /* Invisible at start */
+  }
+  to {
+    /* Ending position - normal position */
+    transform: translateY(0);
+    opacity: 1; /* Visible at end */
+  }
+}

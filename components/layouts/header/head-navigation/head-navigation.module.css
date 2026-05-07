@@ -1,0 +1,17 @@
+.nav-item {
+  opacity: 0;
+  animation: fallDown 1s ease-in-out var(--animation-delay, 0s) forwards;
+}
+
+@keyframes fallDown {
+  from {
+    /* Starting position - above the screen */
+    transform: translateY(-40px);
+    opacity: 0; /* Invisible at start */
+  }
+  to {
+    /* Ending position - normal position */
+    transform: translateY(0);
+    opacity: 1; /* Visible at end */
+  }
+}

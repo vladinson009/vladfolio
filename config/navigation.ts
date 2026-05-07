@@ -5,6 +5,14 @@ export const NAVIGATION_ITEMS = [
     href: '/about-me',
   },
   {
+    key: 'more',
+    href: '/more',
+  },
+  {
+    key: 'projects',
+    href: '/projects',
+  },
+  {
     key: 'home',
     href: '/home',
   },

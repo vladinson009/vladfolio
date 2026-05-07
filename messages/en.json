@@ -12,6 +12,8 @@
   "Header": {
     "portfolio": "Portfolio",
     "about-me": "About me",
-    "home": "Home"
+    "home": "Home",
+    "projects": "Projects",
+    "more": "More"
   }
 }
