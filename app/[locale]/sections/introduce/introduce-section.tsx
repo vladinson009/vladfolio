@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Container from '@/components/shared/container';
 import { Badge } from '@/components/ui/badge';
-import  Quote  from '@/components/shared/quote';
+import Quote from '@/components/shared/quote';
 import { useTranslations } from 'next-intl';
+import classes from './introduce-section.module.css';
+import React from 'react';
 
 export function IntroduceSection() {
   return (
@@ -34,23 +36,45 @@ function AuthorDescription() {
 
   return (
     <div className="flex-2 flex flex-col gap-5">
-      <h1 className="text-3xl text-center sm:text-4xl lg:text-5xl leading-tight">
+      <h1
+        className={`${classes['left-side-animation']} text-3xl text-center sm:text-4xl lg:text-5xl leading-tight`}
+        style={
+          {
+            '--animation-delay': `${0}s`,
+          } as React.CSSProperties
+        }
+      >
         {heading}
       </h1>
       <p
         data-testid="description"
-        className="text-xl text-center sm:text-2xl lg:text-3xl text-muted-foreground leading-tight"
+        className={`${classes['left-side-animation']} text-xl text-center sm:text-2xl lg:text-3xl text-muted-foreground leading-tight`}
+        style={
+          {
+            '--animation-delay': `${0.05}s`,
+          } as React.CSSProperties
+        }
       >
         {description}
       </p>
-      <Quote text={quote} author={quoteAuthor} />
+      <Quote
+        className={classes['left-side-animation']}
+        style={
+          {
+            '--animation-delay': `${0.1}s`,
+          } as React.CSSProperties
+        }
+        text={quote}
+        author={quoteAuthor}
+      />
     </div>
   );
 }
 function AuthorProfilePhoto() {
   return (
     <img
-      className="w-full rounded-4xl object-cover"
+      className={`${classes['right-side-animation']} w-full rounded-4xl object-cover`}
+      style={{ '--animation-delay': `${0}s` } as React.CSSProperties}
       src="author.webp"
       alt="Photo of Vladimir"
     />
@@ -65,7 +89,10 @@ function AuthorBadges() {
   const devops = ['DevOps', 'Docker', 'Vercel', 'Azure'];
 
   return (
-    <div className="flex flex-col gap-2 pt-2 items-center">
+    <div
+      className={`${classes['right-side-animation']} flex flex-col gap-2 pt-2 items-center`}
+      style={{ '--animation-delay': `${0}s` } as React.CSSProperties}
+    >
       <BadgesGroup group={languages} />
       <BadgesGroup group={frameworks} />
       <BadgesGroup group={backend} />
