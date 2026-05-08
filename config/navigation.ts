@@ -1,12 +1,16 @@
 // ! KEEP IN SYNC WITH TESTS => TRANSLATIONS
 export const NAVIGATION_ITEMS = [
   {
+    key: 'more',
+    href: '/more',
+  },
+  {
     key: 'about-me',
     href: '/about-me',
   },
   {
-    key: 'more',
-    href: '/more',
+    key: 'certificates',
+    href: '/certificates',
   },
   {
     key: 'projects',

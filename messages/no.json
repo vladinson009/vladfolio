@@ -6,12 +6,15 @@
     "quoteAuthor": "Vladimir"
   },
   "Metadata": {
-    "title": "Vladimirs portefølje",
+    "title": "Vladimir's Portfolio",
     "description": "Fullstack-utvikler"
   },
   "Header": {
-    "portfolio": "Portefølje",
+    "portfolio": "Portfolio",
     "about-me": "Om meg",
-    "home": "Hjem"
+    "home": "Hjem",
+    "projects": "Prosjekter",
+    "more": "Mer",
+    "certificates": "Sertifikater"
   }
 }

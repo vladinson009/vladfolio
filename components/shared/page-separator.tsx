@@ -10,7 +10,7 @@ type Props = {
 
 export default function PageSeparator({ title, href }: Props) {
   return (
-    <Container className="mt-15 flex justify-between ">
+    <Container className="mt-15 mb-5 flex justify-between ">
       {/* Left */}
       <div className="flex items-center gap-5 w-full">
         <h2 className="text-3xl">
