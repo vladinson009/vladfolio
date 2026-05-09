@@ -13,6 +13,8 @@ import {
 import classes from './projects-section.module.css';
 import { fetchMostRecentProjects, Project } from '@/services/projects.services';
 import { ExternalLinkIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import CardsContainerWrapper from '@/components/shared/cards-container-wrapper/cards-container-wrapper';
 
 type ProjectCardProps = {
   project: Project;
@@ -22,17 +24,19 @@ export default function ProjectsSection() {
   const recentProjects = fetchMostRecentProjects();
 
   return (
-    <section className={`${classes['background']} bg-primary py-5`}>
+    <CardsContainerWrapper>
       <Container className="flex flex-col gap-8 md:flex-row md:gap-3">
         {recentProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </Container>
-    </section>
+    </CardsContainerWrapper>
   );
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
+  const t = useTranslations('CardButtons');
+  const readMore = t('see-more');
   return (
     <Card className={`${classes['animate']} flex-1`}>
       <img src={project.imgUrl} alt={`Photo of ${project.name}`} />
@@ -64,7 +68,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             </Button>
           </a>
           <Button className="hover:scale-115" variant="outline">
-            Read more
+            {readMore}
           </Button>
         </div>
       </CardContent>
