@@ -2,6 +2,7 @@ import { ArrowRightIcon } from 'lucide-react';
 import Container from './container';
 import { Button } from '../ui/button';
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 type Props = {
   title: string;
@@ -9,6 +10,8 @@ type Props = {
 };
 
 export default function PageSeparator({ title, href }: Props) {
+  const t = useTranslations('PageSeparator');
+  const viewAll = t('view-all');
   return (
     <Container className="mt-15 mb-5 flex justify-between ">
       {/* Left */}
@@ -17,13 +20,13 @@ export default function PageSeparator({ title, href }: Props) {
           <span className="text-primary">#</span>
           {title}
         </h2>
-        <div className="border-primary border-t w-2/3"></div>
+        <div className="border-primary border-t w-2/3" />
       </div>
       {/* Right */}
       <div>
         <Button asChild variant="ghost">
           <Link href={href}>
-            <span>View All</span>
+            <span>{viewAll}</span>
             <ArrowRightIcon />
           </Link>
         </Button>

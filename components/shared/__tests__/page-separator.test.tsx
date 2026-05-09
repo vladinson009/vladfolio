@@ -42,6 +42,15 @@ vi.mock('@/i18n/navigation', () => ({
     </a>
   ),
 }));
+vi.mock('next-intl', () => ({
+  useTranslations: vi.fn(() => (key: string) => {
+    const translations: Record<string, string> = {
+      'view-all': 'View All',
+      projects: 'Projects',
+    };
+    return translations[key] || key;
+  }),
+}));
 
 vi.mock('@/components/ui/button', () => ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
