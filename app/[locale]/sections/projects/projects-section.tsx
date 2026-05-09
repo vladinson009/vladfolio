@@ -10,76 +10,31 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-type Project = {
-  project: { name: string; tech: string[]; description: string; imgUrl: string };
+import classes from './projects-section.module.css';
+import { fetchMostRecentProjects, Project } from '@/services/projects.services';
+import { ExternalLinkIcon } from 'lucide-react';
+
+type ProjectCardProps = {
+  project: Project;
 };
 
 export default function ProjectsSection() {
-  const mostRecentProjects = [
-    {
-      name: 'NextJob Applications',
-      tech: [
-        'React',
-        'NextAuth',
-        'NextJs',
-        'PostgreSQL',
-        'Zod',
-        'ShadCN',
-        'Tailwind',
-        'Vercel',
-      ],
-      description:
-        'Job Application Tracker about job applications for different jobs',
-      imgUrl: '/project1.webp',
-    },
-    {
-      name: 'Finance Tracker',
-      tech: [
-        'React',
-        'NextJs',
-        'Clerk',
-        'PostgreSQL',
-        'Zod',
-        'ShadCN',
-        'Tailwind',
-        'Vercel',
-      ],
-      description:
-        'Beautiful dashboard with tables that track your expenses and incomes',
-      imgUrl: '/project2.webp',
-    },
-    {
-      name: 'Finance Tracker',
-      tech: [
-        'React',
-        'NextJs',
-        'Clerk',
-        'PostgreSQL',
-        'Zod',
-        'ShadCN',
-        'Tailwind',
-        'Vercel',
-      ],
-      description:
-        'Beautiful dashboard with tables that track your expenses and incotrack your expenses and incotrack your expenses and incomes',
-      imgUrl: '/project2.webp',
-    },
-  ];
+  const recentProjects = fetchMostRecentProjects();
 
   return (
-    <section className="bg-primary py-5">
+    <section className={`${classes['background']} bg-primary py-5`}>
       <Container className="flex flex-col gap-8 md:flex-row md:gap-3">
-        <ProjectCard project={mostRecentProjects[0]} />
-        <ProjectCard project={mostRecentProjects[1]} />
-        <ProjectCard project={mostRecentProjects[2]} />
+        {recentProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </Container>
     </section>
   );
 }
 
-function ProjectCard({ project }: Project) {
+function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="flex-1">
+    <Card className={`${classes['animate']} flex-1`}>
       <img src={project.imgUrl} alt={`Photo of ${project.name}`} />
       <CardHeader>
         <CardDescription className="flex flex-wrap gap-1">
@@ -96,10 +51,18 @@ function ProjectCard({ project }: Project) {
           <p className="text-muted-foreground">{project.description}</p>
         </CardTitle>
         <div className="flex flex-wrap gap-1 justify-center mt-auto">
-          <Button className="hover:scale-115">Live</Button>
-          <Button className="hover:scale-115" variant="secondary">
-            Git
-          </Button>
+          <a href={project.live} target="_blank" rel="noopener noreferrer">
+            <Button className="hover:scale-115">
+              <ExternalLinkIcon />
+              Live
+            </Button>
+          </a>
+          <a href={project.git} target="_blank" rel="noopener noreferrer">
+            <Button className="hover:scale-115" variant="secondary">
+              <ExternalLinkIcon />
+              Git
+            </Button>
+          </a>
           <Button className="hover:scale-115" variant="outline">
             Read more
           </Button>

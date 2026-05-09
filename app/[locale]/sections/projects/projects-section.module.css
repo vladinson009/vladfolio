@@ -1,0 +1,27 @@
+.animate {
+  animation: fade-in linear;
+  animation-timeline: view();
+}
+.background {
+  animation: background-fade linear;
+  animation-timeline: view();
+  /* animation-range: start; */
+}
+@keyframes background-fade {
+  0% {
+    background-color: var(--color-background);
+  }
+  25%,
+  100% {
+    background-color: var(--color-primary);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    scale: 0.9;
+  }
+  to {
+    scale: 1;
+  }
+}
