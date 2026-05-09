@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import CardsContainerWrapper from '@/components/shared/cards-container-wrapper/cards-container-wrapper';
+import { PropsWithChildren } from 'react';
+import ContainerWrapper from '@/components/shared/cards-container-wrapper/container-wrapper';
 import Container from '@/components/shared/container';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import classes from './certificates-section.module.css';
@@ -9,50 +10,83 @@ import {
   Certificate,
   fetchMostRecentCertificates,
 } from '@/services/certificates.services';
-import { useTranslations } from 'next-intl';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+
+type CredentialsButtonProps = PropsWithChildren<{
+  credentialsUrl: Certificate['credentialsUrl'];
+}>;
+type ImageDialogProps = {
+  imgUrl: string;
+  id: string;
+  title: string;
+};
 
 export default function CertificatesSection() {
   const certificates = fetchMostRecentCertificates();
 
   return (
-    <CardsContainerWrapper>
+    <ContainerWrapper>
       <Container className="flex flex-col gap-8 md:flex-row md:gap-3">
         {certificates.map((certificate) => (
           <CertificateCard key={certificate.id} certificate={certificate} />
         ))}
       </Container>
-    </CardsContainerWrapper>
+    </ContainerWrapper>
   );
 }
 
 function CertificateCard({ certificate }: { certificate: Certificate }) {
-  const t = useTranslations('CardButtons');
-  const readMore = t('see-more');
   return (
-    <Card className={`${classes['animate']} flex-1`}>
-      <img src={certificate.imgUrl} alt={`Photo of certificate ${certificate.id}`} />
-
+    <Card className={`${classes['animate']} flex-1 pt-0`}>
+      <ImageDialog
+        id={certificate.id}
+        imgUrl={certificate.imgUrl}
+        title={certificate.title}
+      />
       <CardContent className="flex flex-col flex-1 gap-4">
         <CardTitle className="text-center m-auto">
           <h3 className="text-xl">{certificate.title}</h3>
         </CardTitle>
-        <div className="flex flex-wrap gap-1 justify-center mt-auto">
-          <a
-            href={certificate.credentialsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button className="hover:scale-115">
-              <ExternalLinkIcon />
-              Credentials
-            </Button>
-          </a>
-
-          {/* <Button className="hover:scale-115" variant="outline">
-            {readMore}
-          </Button> */}
-        </div>
+        <CredentialsButton credentialsUrl={certificate.credentialsUrl} />
       </CardContent>
     </Card>
+  );
+}
+
+function ImageDialog({ imgUrl, id, title }: ImageDialogProps) {
+  return (
+    <Dialog>
+      <DialogTrigger>
+        <img
+          src={imgUrl}
+          alt={`Photo of certificate ${id}`}
+          className="cursor-pointer transition hover:scale-[1.02]"
+        />
+      </DialogTrigger>
+      <DialogContent className="min-w-[70vw] p-0">
+        <DialogHeader className="sr-only">
+          <DialogTitle>{title}</DialogTitle>
+        </DialogHeader>
+        <img src={imgUrl} alt={`Photo of certificate ${id}`} />
+      </DialogContent>
+    </Dialog>
+  );
+}
+function CredentialsButton({ credentialsUrl }: CredentialsButtonProps) {
+  return (
+    <div className="flex flex-wrap gap-1 justify-center mt-auto">
+      <a href={credentialsUrl} target="_blank" rel="noopener noreferrer">
+        <Button className="hover:scale-115">
+          <ExternalLinkIcon />
+          Credentials
+        </Button>
+      </a>
+    </div>
   );
 }

@@ -18,15 +18,16 @@ export function LanguageSwitcher() {
   const locale = useLocale();
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="">
-        <Button
-          variant="outline"
-          className={`${classes['nav-item']} flex hover:text-primary`}
-        >
+      <Button
+        asChild
+        variant="outline"
+        className={`${classes['nav-item']} flex hover:text-primary`}
+      >
+        <DropdownMenuTrigger>
           <span>{locale.toUpperCase()}</span>
           <ChevronDown />
-        </Button>
-      </DropdownMenuTrigger>
+        </DropdownMenuTrigger>
+      </Button>
       <DropdownMenuContent>
         {routing.locales.map((loc) => (
           <DropdownMenuItem key={loc}>

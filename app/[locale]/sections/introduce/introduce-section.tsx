@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Container from '@/components/shared/container';
-import { Badge } from '@/components/ui/badge';
 import Quote from '@/components/shared/quote';
 import { useTranslations } from 'next-intl';
 import classes from './introduce-section.module.css';
 import React from 'react';
+import { techStack } from '@/config/tech-stack';
 
 export function IntroduceSection() {
   return (
@@ -80,31 +80,21 @@ function AuthorProfilePhoto() {
     />
   );
 }
-function AuthorBadges() {
-  const languages = ['TypeScript', 'JavaScript', 'HTML5', 'CSS3'];
-  const frameworks = ['React', 'NextJs', 'React-Router', 'Angular'];
-  const backend = ['Express.js', 'Node.js', 'NextAuth', 'Handlebars.js'];
-  const databases = ['MongoDB', 'Mongoose', 'PostgreSQL', 'DrizzleORM'];
-  const libraries = ['ShadCN', 'Tailwind', 'MUI', 'React-hook-form', 'Zod'];
-  const devops = ['DevOps', 'Docker', 'Vercel', 'Azure'];
 
+function AuthorBadges() {
   return (
     <div
-      className={`${classes['right-side-animation']} flex flex-col gap-2 pt-2 items-center`}
+      className={`${classes['right-side-animation']} flex flex-wrap gap-2 pt-2 items-center`}
       style={{ '--animation-delay': `${0}s` } as React.CSSProperties}
     >
-      <BadgesGroup group={languages} />
-      <BadgesGroup group={frameworks} />
-      <BadgesGroup group={backend} />
-      <BadgesGroup group={databases} />
-      <BadgesGroup group={libraries} />
-      <BadgesGroup group={devops} />
+      {techStack.map((element) => (
+        <img
+          src={element.url}
+          alt={element.name}
+          className="w-10"
+          key={element.name}
+        />
+      ))}
     </div>
   );
-}
-
-function BadgesGroup({ group }: { group: string[] }) {
-  const renderBadge = (element: string) => <Badge key={element}>{element}</Badge>;
-
-  return <p className="flex gap-1">{group.map(renderBadge)}</p>;
 }

@@ -16,7 +16,7 @@ export default function PageSeparator({ title, href }: Props) {
     <Container className="mt-15 mb-5 flex justify-between ">
       {/* Left */}
       <div className="flex items-center gap-5 w-full">
-        <h2 className="text-3xl">
+        <h2 className="text-3xl md:text-4xl">
           <span className="text-primary">#</span>
           {title}
         </h2>

@@ -14,7 +14,7 @@ import classes from './projects-section.module.css';
 import { fetchMostRecentProjects, Project } from '@/services/projects.services';
 import { ExternalLinkIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import CardsContainerWrapper from '@/components/shared/cards-container-wrapper/cards-container-wrapper';
+import ContainerWrapper from '@/components/shared/cards-container-wrapper/container-wrapper';
 
 type ProjectCardProps = {
   project: Project;
@@ -24,13 +24,13 @@ export default function ProjectsSection() {
   const recentProjects = fetchMostRecentProjects();
 
   return (
-    <CardsContainerWrapper>
+    <ContainerWrapper>
       <Container className="flex flex-col gap-8 md:flex-row md:gap-3">
         {recentProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </Container>
-    </CardsContainerWrapper>
+    </ContainerWrapper>
   );
 }
 

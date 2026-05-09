@@ -3,11 +3,13 @@ import { IntroduceSection } from './sections/introduce/introduce-section';
 import ProjectsSection from './sections/projects/projects-section';
 import { useTranslations } from 'next-intl';
 import CertificatesSection from './sections/certificates/certificates-section';
+import SkillsSection from './sections/skills/skills-section';
 
 export default function HomePage() {
   const t = useTranslations('PageSeparator');
   const projects = t('projects');
   const certificates = t('certificates');
+  const skills = t('skills');
 
   return (
     <>
@@ -16,7 +18,8 @@ export default function HomePage() {
       <ProjectsSection />
       <PageSeparator title={certificates} href="/certificates" />
       <CertificatesSection />
-      <PageSeparator title="Unknown" href="/certificates" />
+      <PageSeparator title={skills} href="/certificates" />
+      <SkillsSection />
     </>
   );
 }
