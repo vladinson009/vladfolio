@@ -10,27 +10,9 @@ export type Project = {
 const projects: Project[] = [
   {
     id: '1',
-    git: 'https://github.com/vladinson009/next-job-applications',
-    live: 'https://next-job-applications.vercel.app',
-    name: 'NextJob Applications',
-    tech: [
-      'React',
-      'NextAuth',
-      'NextJs',
-      'PostgreSQL',
-      'Zod',
-      'ShadCN',
-      'Tailwind',
-      'Vercel',
-    ],
-    description: 'Job Application Tracker about job applications for different jobs',
-    imgUrl: '/project1.webp',
-  },
-  {
-    id: '2',
-    git: 'https://github.com/vladinson009/next-cash',
-    live: 'https://next-cash-zeta.vercel.app',
-    name: 'NextCash',
+    git: 'https://github.com/vladinson009/host-tattoo',
+    live: 'https://host-tattoo.vercel.app',
+    name: 'Høst Tattoo',
     tech: [
       'React',
       'NextJs',
@@ -42,8 +24,19 @@ const projects: Project[] = [
       'Vercel',
     ],
     description:
-      'Beautiful dashboard with tables that track your expenses and incomes',
-    imgUrl: '/project2.webp',
+      'Beautiful dashboard with tables that track your expenses and incotrack your expenses and incotrack your expenses and incomes',
+    imgUrl: '/projects/host-tattoo.webp',
+  },
+
+  {
+    id: '2',
+    git: 'https://github.com/vladinson009/game-store',
+    live: 'https://game-store-lemon-gamma.vercel.app',
+    name: 'Game Store',
+    tech: ['Angular', 'MongoDB', 'Zod', 'Vercel'],
+    description:
+      'Beautiful dashboard with tables that track your expenses and incotrack your expenses and incotrack your expenses and incomes',
+    imgUrl: '/projects/game-store.webp',
   },
   {
     id: '3',
@@ -61,27 +54,26 @@ const projects: Project[] = [
       'Vercel',
     ],
     description:
-      'Beautiful dashboard with tables that track your expenses and incotrack your expenses and incotrack your expenses and incomes',
-    imgUrl: '/project2.webp',
+      'Beautiful dashboard with tables that track your expenses and incomes',
+    imgUrl: '/projects/next-cash.webp',
   },
   {
     id: '4',
-    git: 'https://github.com/vladinson009/host-tattoo',
-    live: 'https://host-tattoo.vercel.app',
-    name: 'Høst Tattoo',
+    git: 'https://github.com/vladinson009/next-job-applications',
+    live: 'https://next-job-applications.vercel.app',
+    name: 'NextJob Applications',
     tech: [
       'React',
+      'NextAuth',
       'NextJs',
-      'Clerk',
       'PostgreSQL',
       'Zod',
       'ShadCN',
       'Tailwind',
       'Vercel',
     ],
-    description:
-      'Beautiful dashboard with tables that track your expenses and incotrack your expenses and incotrack your expenses and incomes',
-    imgUrl: '/project3.webp',
+    description: 'Job Application Tracker about job applications for different jobs',
+    imgUrl: '/projects/next-applications.webp',
   },
 ];
 
