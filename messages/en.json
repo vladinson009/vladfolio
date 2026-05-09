@@ -16,5 +16,13 @@
     "projects": "Projects",
     "more": "More",
     "certificates": "Certificates"
+  },
+  "PageSeparator": {
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "view-all": "View All"
+  },
+  "CardButtons": {
+    "see-more": "See more"
   }
 }
