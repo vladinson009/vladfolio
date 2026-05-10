@@ -53,8 +53,8 @@ vi.mock('next-intl', () => ({
 }));
 
 vi.mock('@/components/ui/button', () => ({
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  Button: ({ children, className, variant, ...props }: any) => (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+  Button: ({ children, className, variant, asChild, ...props }: any) => (
     <button
       className={className}
       data-testid="button"

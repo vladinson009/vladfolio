@@ -23,23 +23,6 @@ vi.mock('@/components/shared/container', () => ({
   ),
 }));
 
-vi.mock('@/components/ui/badge', () => ({
-  Badge: ({
-    children,
-    className,
-    variant,
-  }: {
-    children: React.ReactNode;
-    className?: string;
-    variant?: string;
-  }) => (
-    <span className={className} data-testid="badge" data-variant={variant}>
-      {children}
-    </span>
-  ),
-  badgeVariants: () => '',
-}));
-
 vi.mock('@/components/shared/quote', () => ({
   default: ({ text, author }: { text: string; author: string }) => (
     <blockquote data-testid="quote">
@@ -147,12 +130,6 @@ describe('IntroduceSection', () => {
   it('renders the ProfilePhoto', () => {
     render(<IntroduceSection />);
     expect(screen.getByAltText('Photo of Vladimir')).toBeInTheDocument();
-  });
-
-  it('renders badges', () => {
-    render(<IntroduceSection />);
-    const badges = screen.getAllByTestId('badge');
-    expect(badges.length).toBeGreaterThan(0);
   });
 
   it('renders quote', () => {
