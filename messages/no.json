@@ -6,12 +6,90 @@
     "quoteAuthor": "Vladimir"
   },
   "Metadata": {
-    "title": "Vladimirs portefølje",
+    "title": "Vladimir's Portfolio",
     "description": "Fullstack-utvikler"
   },
   "Header": {
-    "portfolio": "Portefølje",
-    "about-me": "Om meg",
-    "home": "Hjem"
+    "portfolio": "Portfolio",
+    "about-me": "om-meg",
+    "home": "hjem",
+    "projects": "prosjekter",
+    "more": "mer",
+    "certificates": "sertifikater"
+  },
+  "PageSeparator": {
+    "projects": "prosjekter",
+    "certificates": "sertifikater",
+    "skills": "ferdigheter",
+    "see-more": "Se mer",
+    "about-me": "om-meg",
+    "contacts": "kontakter"
+  },
+  "CardButtons": {
+    "see-more": "Se mer"
+  },
+
+  "Skills": {
+    "frontend": {
+      "javascript": "Jeg startet JavaScript-reisen min i 2021 under COVID-perioden og har kontinuerlig utviklet ferdighetene mine siden den gang. Gjennom årene har jeg bygget et solid grunnlag gjennom praktisk erfaring og ekte prosjekter.",
+      "html5": "Jeg har god kunnskap om semantisk HTML5 og hvordan man bygger tilgjengelige og godt strukturerte nettsider. Jeg fullførte kurset mitt med svært gode resultater og lærte av en dyktig foreleser.",
+      "css3": "CSS3 har vært en av de mest utfordrende og samtidig mest givende delene av webutvikling for meg. Jeg forbedrer stadig ferdighetene mine innen styling og layout gjennom praksis, kurs og læring fra utviklermiljøet.",
+      "typescript": "Jeg liker å jobbe med TypeScript og skrive typesikker og vedlikeholdbar kode. Moderne biblioteker tilbyr svært god typestøtte, noe som gjør utviklingen mer stabil og skalerbar.",
+      "react": "React er min favorittteknologi på frontend og verktøyet jeg bruker mest for moderne webapplikasjoner. Jeg har bygget flere prosjekter med React og det moderne økosystemet rundt."
+    },
+    "backend": {
+      "typescript": "Typesikkerhet hjelper meg med å bygge mer stabile og vedlikeholdbare backend-applikasjoner. Jeg liker strukturen og tryggheten TypeScript gir på serversiden.",
+      "nodejs": "Node.js er en av mine favorittteknologier for å bygge backend-systemer og applikasjonslogikk. Jeg liker å utvikle sikre og skalerbare serverapplikasjoner med det."
+    },
+    "databases": {
+      "mongodb": "MongoDB var den første databasen jeg lærte og den som startet backend-reisen min. Selv om den har mange fordeler, foretrekker jeg i dag SQL-databaser i de fleste prosjekter.",
+      "postgresql": "PostgreSQL er databasen jeg foretrekker i dag, spesielt sammen med Drizzle ORM. Jeg setter pris på typesikkerheten, fleksibiliteten og de kraftige relasjonelle funksjonene."
+    },
+    "frameworks": {
+      "nextjs": "Next.js var en stor endring for meg i React-økosystemet og ble raskt mitt foretrukne rammeverk. Jeg har god forståelse for arkitekturen, routing-systemet og moderne funksjoner.",
+      "angular": "Angular var utfordrende i starten, men jeg liker å lære komplekse teknologier og utvikle meg gjennom utfordringer. Det har blitt et av de mest interessante rammeverkene jeg har jobbet med.",
+      "react-router": "React Router er en nyere teknologi i stacken min som jeg begynte å lære på egen hånd i 2026. Erfaringen min fra andre rammeverk hjalp meg med å forstå konseptene og mønstrene raskt.",
+      "expressjs": "Express.js er standardrammeverket for backend i JavaScript-økosystemet, og jeg har jobbet med det siden 2023. Jeg har bygget flere backend-prosjekter med Express og Node.js."
+    },
+    "libraries": {
+      "next-auth": "NextAuth.js er et sikkert og pålitelig bibliotek for autentisering som jeg har brukt med Google, GitHub og credentials-innlogging. Jeg har også implementert funksjoner som e-postverifisering og tilbakestilling av passord.",
+      "handlebars": "Handlebars var en av de første templating-motorene jeg jobbet med mens jeg lærte Express.js i 2023. Det hjalp meg med å forstå server-side rendering og tradisjonell webarkitektur.",
+      "mongoose": "Mongoose er en kraftig ODM for MongoDB som gir skjemavalidering og en mer strukturert utviklingsopplevelse. Selv om det kan være tregere enn den native driveren, foretrekker jeg det på grunn av sikkerheten og strukturen det gir.",
+      "drizzle-orm": "Drizzle ORM har vært en stor forbedring for arbeid med PostgreSQL og TypeScript. Jeg liker spesielt typesikkerheten, SQL-lignende tilnærming og fleksibiliteten for komplekse spørringer.",
+      "tailwindcss": "Tailwind CSS har blitt standardmåten min å style moderne applikasjoner på. Jeg bruker det i de fleste prosjektene mine fordi utility-first-tilnærmingen gjør utviklingen raskere og renere.",
+      "shadcn-ui": "shadcn/ui er for øyeblikket mitt favorittbibliotek for komponenter på grunn av enkelheten og friheten til tilpasning. De fleste av mine nyere prosjekter er bygget med shadcn-komponenter.",
+      "material-ui": "Jeg har praktisk erfaring med Material UI fra flere tidligere prosjekter. Selv om jeg i dag foretrekker shadcn/ui, hjalp Material UI meg med å forstå større komponentbaserte designsystemer.",
+      "react-hook-form": "React Hook Form gjør arbeid med skjemaer raskt, effektivt og skalerbart. Kombinert med Zod gir det en svært god utvikleropplevelse for validering og håndtering av skjemaer.",
+      "zod": "Zod er et av mine favorittverktøy for validering både på frontend og backend. Jeg bruker det i de fleste prosjektene mine for å sikre typesikkerhet og pålitelig datavalidering.",
+      "next-intl": "next-intl er et nyere bibliotek i stacken min som jeg begynte å lære i 2026. Jeg liker å utforske internasjonalisering og bygge flerspråklige applikasjoner med moderne Next.js-praksis."
+    },
+    "devops": {
+      "devops": "Jeg har erfaring med DevOps-praksis og automatisering ved bruk av GitHub og GitHub Actions. Jeg liker å forbedre utviklingsflyt og automatisere repeterende oppgaver.",
+      "jenkins": "Jeg har jobbet med Jenkins for å lage automatiserte arbeidsflyter for testing og deployment. Det hjalp meg med å forstå CI/CD-pipelines og automatisering av utrulling bedre.",
+      "docker": "Jeg har erfaring med Docker for bygging av images og kjøring av applikasjoner i isolerte miljøer. Det gjør utvikling og deployment enklere og mer konsistent.",
+      "containers": "Containerisering gjør at applikasjoner kan kjøre likt på forskjellige maskiner og miljøer. Jeg forstår fordelene containere gir når det gjelder skalerbarhet og pålitelighet.",
+      "azure": "Jeg har generell forståelse av Azure fra kursarbeid fullført i 2025, inkludert deployment-prosesser og administrasjon av skytjenester.",
+      "vercel": "Vercel gir en rask og enkel måte å deploye moderne webapplikasjoner på. Jeg har brukt plattformen til å deploye og administrere prosjekter effektivt gjennom gratisnivået deres."
+    },
+    "translate": {
+      "frontend": "Front-End",
+      "backend": "Back-End",
+      "databases": "Databaser",
+      "frameworks": "Rammeverk",
+      "libraries": "Biblioteker",
+      "devops": "DevOps"
+    }
+  },
+  "AboutMe": {
+    "heading": "Hei, jeg heter Vladimir!",
+    "paragraphs": [
+      "Jeg er en engasjert fullstack webutvikler med erfaring innen moderne webutvikling siden 2021, hvor jeg kombinerer formell utdanning, kontinuerlig selvstudium og praktisk prosjektutvikling.",
+      "Gjennom årene har jeg jobbet med flere egne prosjekter og bygget applikasjoner selvstendig — fra idé og planlegging til ferdig løsning. Denne erfaringen har gitt meg sterke ferdigheter innen problemløsning, kritisk tenkning og evnen til å tilpasse meg raskt når jeg møter nye teknologier eller komplekse tekniske utfordringer.",
+      "Jeg liker å utvikle skalerbare og vedlikeholdbare applikasjoner med fokus på ren arkitektur, lesbar kode, ytelse og god brukeropplevelse. Jeg videreutvikler kontinuerlig kompetansen min gjennom avanserte kurs, tekniske bøker, dokumentasjon og praktisk eksperimentering.",
+      "Utviklerreisen min har inkludert arbeid med både frontend- og backend-teknologier, autentiseringssystemer, relasjonsdatabaser, API-integrasjoner og moderne rammeverk. Jeg motiveres spesielt av å løse virkelige problemer gjennom teknologi og bygge prosjekter som kan ha praktisk verdi.",
+      "Jeg arbeider godt både selvstendig og i team, og jeg setter stor pris på kommunikasjon, ansvar og kontinuerlig forbedring. Jeg prøver alltid å følge beste praksis innen clean code, gjenbrukbare komponenter, vedlikeholdbar arkitektur og Test-Driven Development (TDD) når det er hensiktsmessig.",
+      "Når det gjelder frontend-utvikling, er React favorittteknologien min på grunn av fleksibiliteten, økosystemet og utvikleropplevelsen. Samtidig liker jeg også å jobbe med Angular, fordi strukturen og arkitekturen utfordrer meg til å tenke annerledes og utvikle meg videre som utvikler.",
+      "Jeg er alltid motivert til å lære nye teknologier samtidig som jeg fortsetter å styrke forståelsen min av verktøyene og konseptene jeg allerede bruker."
+    ]
   }
 }

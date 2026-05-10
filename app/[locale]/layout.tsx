@@ -58,6 +58,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
+          <div className="scroll-watcher"></div>
           <Header />
           {children}
         </NextIntlClientProvider>

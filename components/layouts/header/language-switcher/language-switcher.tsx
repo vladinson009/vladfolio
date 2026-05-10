@@ -12,17 +12,22 @@ import { useLocale } from 'next-intl';
 import { localeMap } from '@/config/i18n';
 
 import classes from './language-switcher.module.css';
+import { Button } from '@/components/ui/button';
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="">
-        <div className={`${classes['nav-item']} flex hover:text-primary`}>
+      <Button
+        asChild
+        variant="outline"
+        className={`${classes['nav-item']} flex hover:text-primary`}
+      >
+        <DropdownMenuTrigger>
           <span>{locale.toUpperCase()}</span>
           <ChevronDown />
-        </div>
-      </DropdownMenuTrigger>
+        </DropdownMenuTrigger>
+      </Button>
       <DropdownMenuContent>
         {routing.locales.map((loc) => (
           <DropdownMenuItem key={loc}>

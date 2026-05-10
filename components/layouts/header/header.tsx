@@ -15,7 +15,9 @@ export default function Header() {
           <BriefcaseBusinessIcon
             className={`text-primary size-8 ${classes['icon-effect']}`}
           />
-          <h1 className={classes['title-effect']}>{t('portfolio')}</h1>
+          <h1 className={`${classes['title-effect']} hover:text-primary`}>
+            {t('portfolio')}
+          </h1>
         </Link>
         <div className="flex items-center gap-10">
           <HeadNavigation />
@@ -25,4 +27,3 @@ export default function Header() {
     </div>
   );
 }
-// [&>*:first-child]:text-foreground

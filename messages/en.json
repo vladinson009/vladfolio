@@ -11,9 +11,84 @@
   },
   "Header": {
     "portfolio": "Portfolio",
-    "about-me": "About me",
-    "home": "Home",
-    "projects": "Projects",
-    "more": "More"
+    "about-me": "about-me",
+    "home": "home",
+    "projects": "projects",
+    "more": "more",
+    "certificates": "certificates"
+  },
+  "PageSeparator": {
+    "projects": "projects",
+    "certificates": "certificates",
+    "skills": "skills",
+    "see-more": "See more",
+    "about-me": "about-me",
+    "contacts": "contacts"
+  },
+  "CardButtons": {
+    "see-more": "See more"
+  },
+  "Skills": {
+    "frontend": {
+      "javascript": "I started my JavaScript journey in 2021 during the COVID period and have been continuously improving my skills ever since. Over the years, I’ve built a strong foundation through constant practice and real projects.",
+      "html5": "I have solid knowledge of semantic HTML5 and building accessible, well-structured web pages. I completed my course with excellent results and learned from an outstanding lecturer.",
+      "css3": "CSS3 has been one of the most challenging and rewarding parts of web development for me. I continuously improve my styling and layout skills through practice, courses, and learning from the community.",
+      "typescript": "I enjoy working with TypeScript and writing type-safe, maintainable codebases. Modern libraries provide excellent type support, which makes development more reliable and scalable.",
+      "react": "React is my favorite frontend technology and the tool I use most for modern web applications. I have built multiple projects using React and its modern ecosystem."
+    },
+    "backend": {
+      "typescript": "Type safety helps me build more reliable and maintainable backend applications. I enjoy the structure and confidence TypeScript provides on the server side.",
+      "nodejs": "Node.js is one of my favorite technologies for building backend systems and application logic. I enjoy creating secure and scalable server-side applications with it."
+    },
+    "databases": {
+      "mongodb": "MongoDB was the first database I learned and helped me start my backend journey. While it has its strengths, I now prefer working with SQL databases for most projects.",
+      "postgresql": "PostgreSQL is my preferred database today, especially when combined with Drizzle ORM. I appreciate its type safety, flexibility, and powerful relational features."
+    },
+    "frameworks": {
+      "nextjs": "Next.js was a game changer for me in the React ecosystem and became my preferred framework. I have a strong understanding of its architecture, routing, and modern features.",
+      "angular": "Angular was challenging at first, but I enjoy learning complex technologies and growing through them. It has become one of the most interesting frameworks I’ve worked with.",
+      "react-router": "React Router is a newer technology in my stack that I started learning independently in 2026. My experience with other frameworks helped me quickly understand its concepts and patterns.",
+      "expressjs": "Express.js is the standard backend framework in the JavaScript ecosystem and I have been working with it since 2023. I have built several backend projects using Express and Node.js."
+    },
+    "libraries": {
+      "next-auth": "NextAuth.js is a secure and reliable authentication library that I have used with Google, GitHub, and credentials providers. I have also implemented features such as email verification and password reset flows.",
+      "handlebars": "Handlebars was one of the first templating engines I worked with while learning Express.js in 2023. It helped me understand server-side rendering and traditional web application architecture.",
+      "mongoose": "Mongoose is a powerful ODM for MongoDB that provides schema validation and a cleaner development experience. Although it can be slower than the native driver, I prefer it for the safety and structure it adds.",
+      "drizzle-orm": "Drizzle ORM has been a game changer for working with PostgreSQL and TypeScript. I really enjoy its type safety, SQL-like approach, and flexibility for complex queries.",
+      "tailwindcss": "Tailwind CSS has become my standard approach for styling modern applications. I use it in most of my projects because its utility-first workflow makes development faster and cleaner.",
+      "shadcn-ui": "shadcn/ui is currently my favorite component library because of its simplicity and customization freedom. Most of my recent projects are built using shadcn components.",
+      "material-ui": "I have practical experience with Material UI from several past projects. While I now prefer shadcn/ui, Material UI helped me understand large-scale component-based design systems.",
+      "react-hook-form": "React Hook Form makes working with forms fast, efficient, and scalable. Combined with Zod, it provides an excellent developer experience for validation and form management.",
+      "zod": "Zod is one of my favorite validation tools for both frontend and backend applications. I use it in most of my projects to ensure type safety and reliable data validation.",
+      "next-intl": "next-intl is a newer library in my stack that I started learning in 2026. I enjoy exploring internationalization and building multilingual applications with modern Next.js practices."
+    },
+    "devops": {
+      "devops": "I have experience with DevOps practices and automation using GitHub and GitHub Actions. I enjoy improving development workflows and automating repetitive tasks.",
+      "jenkins": "I have worked with Jenkins for creating automated workflows for testing and deployment. It helped me better understand CI/CD pipelines and deployment automation.",
+      "docker": "I have experience working with Docker for building images and running applications in isolated environments. It helps simplify development and deployment workflows.",
+      "containers": "Containerization allows applications to run consistently across different machines and environments. I understand the benefits containers provide for scalability and reliability.",
+      "azure": "I have a general understanding of Azure from coursework completed in 2025, including deployment workflows and cloud service management.",
+      "vercel": "Vercel provides a fast and simple way to deploy modern web applications. I have used it to deploy and manage projects efficiently through its free hosting platform."
+    },
+    "translate": {
+      "frontend": "Front-End",
+      "backend": "Back-End",
+      "databases": "Databases",
+      "frameworks": "Frameworks",
+      "libraries": "Libraries",
+      "devops": "DevOps"
+    }
+  },
+  "AboutMe": {
+    "heading": "Hello, my name is Vladimir!",
+    "paragraphs": [
+      "I am a passionate full-stack web developer with experience in modern web development since 2021, combining formal education, continuous self-learning, and hands-on project development.",
+      "Over the years, I have worked on a wide range of personal projects, building applications independently from concept to deployment. Through this process, I have developed strong problem-solving skills, critical thinking, and the ability to adapt quickly when facing unfamiliar technologies or complex technical challenges.",
+      "I enjoy creating scalable and maintainable applications with a strong focus on clean architecture, readable code, performance, and user experience. I continuously improve my skills through advanced courses, technical books, documentation, and practical experimentation.",
+      "My development journey has included working with both frontend and backend technologies, authentication systems, relational databases, API integrations, and modern frameworks. I especially enjoy solving real-world problems through software and creating projects that have practical value.",
+      "I work well both independently and as part of a team, and I value communication, responsibility, and continuous improvement. I strive to follow best practices such as clean code principles, component reusability, maintainable architecture, and Test-Driven Development (TDD) whenever appropriate.",
+      "When it comes to frontend development, my favorite technology is React because of its flexibility, ecosystem, and developer experience. At the same time, I also enjoy working with Angular, as its structure and architecture challenge me to think differently and improve as a developer.",
+      "I am always motivated to learn new technologies while continuing to deepen my understanding of the tools and concepts I already use."
+    ]
   }
 }

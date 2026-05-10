@@ -1,0 +1,12 @@
+.background {
+  animation: background-fade linear forwards;
+  animation-timeline: view();
+
+  animation-range-start: 100px;
+  animation-range-end: contain;
+}
+@keyframes background-fade {
+  to {
+    background-color: var(--color-primary);
+  }
+}

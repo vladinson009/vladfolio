@@ -32,12 +32,12 @@ export function HeadNavigation() {
 
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger
-          className="flex sm:hidden"
+          className={`${classes['nav-item']} flex sm:hidden`}
           aria-label="Toggle mobile navigation"
         >
           <TriggerIcon open={open} />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="flex flex-col sm:hidden">
+        <DropdownMenuContent className="flex flex-col-reverse sm:hidden">
           {nav.map((el) => (
             <ListItem key={el.href} {...el} />
           ))}
