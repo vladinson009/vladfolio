@@ -21,7 +21,9 @@
     "projects": "prosjekter",
     "certificates": "sertifikater",
     "skills": "ferdigheter",
-    "view-all": "Se alle"
+    "see-more": "Se mer",
+    "about-me": "om-meg",
+    "contacts": "kontakter"
   },
   "CardButtons": {
     "see-more": "Se mer"
@@ -77,5 +79,17 @@
       "libraries": "Biblioteker",
       "devops": "DevOps"
     }
+  },
+  "AboutMe": {
+    "heading": "Hei, jeg heter Vladimir!",
+    "paragraphs": [
+      "Jeg er en engasjert fullstack webutvikler med erfaring innen moderne webutvikling siden 2021, hvor jeg kombinerer formell utdanning, kontinuerlig selvstudium og praktisk prosjektutvikling.",
+      "Gjennom årene har jeg jobbet med flere egne prosjekter og bygget applikasjoner selvstendig — fra idé og planlegging til ferdig løsning. Denne erfaringen har gitt meg sterke ferdigheter innen problemløsning, kritisk tenkning og evnen til å tilpasse meg raskt når jeg møter nye teknologier eller komplekse tekniske utfordringer.",
+      "Jeg liker å utvikle skalerbare og vedlikeholdbare applikasjoner med fokus på ren arkitektur, lesbar kode, ytelse og god brukeropplevelse. Jeg videreutvikler kontinuerlig kompetansen min gjennom avanserte kurs, tekniske bøker, dokumentasjon og praktisk eksperimentering.",
+      "Utviklerreisen min har inkludert arbeid med både frontend- og backend-teknologier, autentiseringssystemer, relasjonsdatabaser, API-integrasjoner og moderne rammeverk. Jeg motiveres spesielt av å løse virkelige problemer gjennom teknologi og bygge prosjekter som kan ha praktisk verdi.",
+      "Jeg arbeider godt både selvstendig og i team, og jeg setter stor pris på kommunikasjon, ansvar og kontinuerlig forbedring. Jeg prøver alltid å følge beste praksis innen clean code, gjenbrukbare komponenter, vedlikeholdbar arkitektur og Test-Driven Development (TDD) når det er hensiktsmessig.",
+      "Når det gjelder frontend-utvikling, er React favorittteknologien min på grunn av fleksibiliteten, økosystemet og utvikleropplevelsen. Samtidig liker jeg også å jobbe med Angular, fordi strukturen og arkitekturen utfordrer meg til å tenke annerledes og utvikle meg videre som utvikler.",
+      "Jeg er alltid motivert til å lære nye teknologier samtidig som jeg fortsetter å styrke forståelsen min av verktøyene og konseptene jeg allerede bruker."
+    ]
   }
 }

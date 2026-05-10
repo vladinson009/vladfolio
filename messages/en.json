@@ -21,7 +21,9 @@
     "projects": "projects",
     "certificates": "certificates",
     "skills": "skills",
-    "view-all": "View All"
+    "see-more": "See more",
+    "about-me": "about-me",
+    "contacts": "contacts"
   },
   "CardButtons": {
     "see-more": "See more"
@@ -76,5 +78,17 @@
       "libraries": "Libraries",
       "devops": "DevOps"
     }
+  },
+  "AboutMe": {
+    "heading": "Hello, my name is Vladimir!",
+    "paragraphs": [
+      "I am a passionate full-stack web developer with experience in modern web development since 2021, combining formal education, continuous self-learning, and hands-on project development.",
+      "Over the years, I have worked on a wide range of personal projects, building applications independently from concept to deployment. Through this process, I have developed strong problem-solving skills, critical thinking, and the ability to adapt quickly when facing unfamiliar technologies or complex technical challenges.",
+      "I enjoy creating scalable and maintainable applications with a strong focus on clean architecture, readable code, performance, and user experience. I continuously improve my skills through advanced courses, technical books, documentation, and practical experimentation.",
+      "My development journey has included working with both frontend and backend technologies, authentication systems, relational databases, API integrations, and modern frameworks. I especially enjoy solving real-world problems through software and creating projects that have practical value.",
+      "I work well both independently and as part of a team, and I value communication, responsibility, and continuous improvement. I strive to follow best practices such as clean code principles, component reusability, maintainable architecture, and Test-Driven Development (TDD) whenever appropriate.",
+      "When it comes to frontend development, my favorite technology is React because of its flexibility, ecosystem, and developer experience. At the same time, I also enjoy working with Angular, as its structure and architecture challenge me to think differently and improve as a developer.",
+      "I am always motivated to learn new technologies while continuing to deepen my understanding of the tools and concepts I already use."
+    ]
   }
 }

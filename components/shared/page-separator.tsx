@@ -11,12 +11,12 @@ type Props = {
 
 export default function PageSeparator({ title, href }: Props) {
   const t = useTranslations('PageSeparator');
-  const viewAll = t('view-all');
+  const seeMore = t('see-more');
   return (
     <Container className="mt-15 mb-5 flex justify-between ">
       {/* Left */}
       <div className="flex items-center gap-5 w-full">
-        <h2 className="text-3xl md:text-4xl">
+        <h2 className="text-3xl md:text-4xl whitespace-nowrap">
           <span className="text-primary">#</span>
           {title}
         </h2>
@@ -26,7 +26,7 @@ export default function PageSeparator({ title, href }: Props) {
       <div>
         <Button asChild variant="ghost">
           <Link href={href}>
-            <span>{viewAll}</span>
+            <span>{seeMore}</span>
             <ArrowRightIcon />
           </Link>
         </Button>

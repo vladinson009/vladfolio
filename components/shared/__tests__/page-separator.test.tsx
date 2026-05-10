@@ -45,7 +45,7 @@ vi.mock('@/i18n/navigation', () => ({
 vi.mock('next-intl', () => ({
   useTranslations: vi.fn(() => (key: string) => {
     const translations: Record<string, string> = {
-      'view-all': 'View All',
+      'see-more': 'See more',
       projects: 'Projects',
     };
     return translations[key] || key;
@@ -86,9 +86,9 @@ describe('PageSeparator', () => {
     expect(link).toHaveAttribute('href', '/projects');
   });
 
-  it('renders "View All" button text', () => {
+  it('renders "See more" button text', () => {
     render(<PageSeparator title="Projects" href="/projects" />);
-    expect(screen.getByText('View All')).toBeInTheDocument();
+    expect(screen.getByText('See more')).toBeInTheDocument();
   });
 
   it('renders arrow right icon', () => {
@@ -144,7 +144,7 @@ describe('PageSeparator', () => {
   it('button contains both text and icon', () => {
     render(<PageSeparator title="Projects" href="/projects" />);
     const button = screen.getByTestId('button');
-    expect(button).toContainElement(screen.getByText('View All'));
+    expect(button).toContainElement(screen.getByText('See more'));
     expect(button).toContainElement(screen.getByTestId('arrow-right-icon'));
   });
 });

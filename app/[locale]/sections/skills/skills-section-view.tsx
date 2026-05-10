@@ -36,9 +36,9 @@ export function SkillsSectionView({
 }: SkillSectionViewProps) {
   return (
     <ContainerWrapper>
-      <Container as="section" className="flex gap-3">
-        {/* Left Side */}
-        <div className="flex-4 flex flex-wrap gap-4 flex-col">
+      <Container as="section" className="flex-col gap-3">
+        <p className="text-muted-foreground animate-pulse">(Hover skill)</p>
+        <div className="flex flex-wrap gap-4 flex-col">
           <RenderBadges tech={frontend} category={translateCategories.frontend} />
           <RenderBadges tech={backend} category={translateCategories.backend} />
           <RenderBadges tech={databases} category={translateCategories.databases} />
@@ -49,13 +49,6 @@ export function SkillsSectionView({
           <RenderBadges tech={libraries} category={translateCategories.libraries} />
           <RenderBadges tech={devOps} category={translateCategories.devops} />
         </div>
-        {/* Right Side */}
-        <div className="flex-6 bg-red-400">
-          <p>{frontend[0].skill}</p>
-          <p>ASD</p>
-          <p>ASD</p>
-          <p>ASD</p>
-        </div>
       </Container>
     </ContainerWrapper>
   );
@@ -63,8 +56,8 @@ export function SkillsSectionView({
 function RenderBadges({ tech, category }: { tech: Skill[]; category: string }) {
   return (
     <div className="flex flex-col gap-1">
-      <h2 className="font-bold text-xl">{category}</h2>
-      <p className="flex flex-wrap gap-2">
+      <h2 className="font-bold text-2xl">{category}</h2>
+      <p className="flex flex-wrap gap-3">
         {tech.map((skillObject) => (
           <HoverSkillBadge key={skillObject.skill} skillObject={skillObject} />
         ))}
@@ -76,7 +69,10 @@ function HoverSkillBadge({ skillObject }: { skillObject: Skill }) {
   return (
     <HoverCard>
       <HoverCardTrigger>
-        <Badge className="cursor-help hover:scale-120" variant="secondary">
+        <Badge
+          className="text-xl p-5 cursor-help hover:scale-110"
+          variant="secondary"
+        >
           {skillObject.skill}
         </Badge>
       </HoverCardTrigger>
