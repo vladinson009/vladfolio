@@ -1,78 +1,16 @@
-import ContainerWrapper from '@/components/shared/cards-container-wrapper/container-wrapper';
-import Container from '@/components/shared/container';
-import { Badge } from '@/components/ui/badge';
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/hover-card';
-import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+'use server';
 
-type Skill = {
+import { getTranslations } from 'next-intl/server';
+import { SkillsSectionView } from './skills-section-view';
+
+export type Skill = {
   skill: string;
   info: string;
 };
 
-export default async function SkillsSection() {
-  const {
-    frontend,
-    translateCategories,
-    backend,
-    databases,
-    frameworks,
-    libraries,
-    devOps,
-  } = await translateSkills();
-  return (
-    <ContainerWrapper>
-      <Container as="section" className="flex gap-3">
-        {/* Left Side */}
-        <div className="flex-4 flex flex-wrap gap-4 flex-col">
-          <RenderBadges tech={frontend} category={translateCategories.frontend} />
-          <RenderBadges tech={backend} category={translateCategories.backend} />
-          <RenderBadges tech={databases} category={translateCategories.databases} />
-          <RenderBadges
-            tech={frameworks}
-            category={translateCategories.frameworks}
-          />
-          <RenderBadges tech={libraries} category={translateCategories.libraries} />
-          <RenderBadges tech={devOps} category={translateCategories.devops} />
-        </div>
-        {/* Right Side */}
-        <div className="flex-6 bg-red-400">
-          <p>{frontend[0].skill}</p>
-          <p>ASD</p>
-          <p>ASD</p>
-          <p>ASD</p>
-        </div>
-      </Container>
-    </ContainerWrapper>
-  );
-}
-function RenderBadges({ tech, category }: { tech: Skill[]; category: string }) {
-  return (
-    <div className="flex flex-col gap-1">
-      <h2 className="font-bold text-xl">{category}</h2>
-      <p className="flex flex-wrap gap-2">
-        {tech.map((skillObject) => (
-          <HoverSkillCard key={skillObject.skill} skillObject={skillObject} />
-        ))}
-      </p>
-    </div>
-  );
-}
-function HoverSkillCard({ skillObject }: { skillObject: Skill }) {
-  return (
-    <HoverCard>
-      <HoverCardTrigger>
-        <Badge className="cursor-help hover:scale-120" variant="secondary">
-          {skillObject.skill}
-        </Badge>
-      </HoverCardTrigger>
-      <HoverCardContent>{skillObject.info}</HoverCardContent>
-    </HoverCard>
-  );
+export async function SkillsSection() {
+  const translate = await translateSkills();
+  return <SkillsSectionView {...translate} />;
 }
 
 async function translateSkills() {

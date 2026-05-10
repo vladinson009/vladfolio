@@ -20,7 +20,7 @@ type ProjectCardProps = {
   project: Project;
 };
 
-export default function ProjectsSection() {
+export function ProjectsSection() {
   const recentProjects = fetchMostRecentProjects();
 
   return (

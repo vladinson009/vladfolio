@@ -11,7 +11,6 @@ import {
   testRequiredProperties,
   testUniqueIds,
   testValidLength,
-  testValidUrls,
 } from './shared-service-tests';
 
 vi.mock('../certificates.services.ts', () => ({
@@ -78,7 +77,6 @@ describe('Certificates services', () => {
       ['id', 'title', 'imgUrl', 'credentialsUrl'],
     );
     testIsArray(() => result, 'certificates');
-    testValidUrls(() => result, ['credentialsUrl']);
     testNonEmptyStringProperty(() => result, 'title');
   });
   describe('fetchAllCertificates()', () => {
@@ -93,7 +91,11 @@ describe('Certificates services', () => {
       ['credentialsUrl', 'id', 'imgUrl', 'title'],
     );
     testUniqueIds(() => result);
-    testValidUrls(() => result, ['credentialsUrl']);
+    it('each project has valid URLs', () => {
+      result.forEach((cert) => {
+        expect(cert.credentialsUrl).toMatch(/^https:\/\//);
+      });
+    });
     testIsArray(() => result, 'certificates');
     testDescendingIdSort(() => result);
     testNonEmptyStringProperty(() => result, 'title');

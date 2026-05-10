@@ -27,4 +27,3 @@ export default function Header() {
     </div>
   );
 }
-// [&>*:first-child]:text-foreground

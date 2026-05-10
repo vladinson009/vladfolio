@@ -39,30 +39,10 @@ export function testUniqueIds(getItems: () => ServiceItem[]) {
   });
 }
 
-export function testValidUrls(getItems: () => ServiceItem[], urlFields: string[]) {
-  const items = getItems();
-  it('has valid URLs', () => {
-    items.forEach((item) => {
-      urlFields.forEach((field) => {
-        expect(item[field]).toMatch(/^https?:\/\//);
-      });
-    });
-  });
-}
 export function testIsArray(getItems: () => ServiceItem[], unitName: string) {
   const items = getItems();
   it(`return an array of ${unitName}`, () => {
     expect(Array.isArray(items)).toBe(true);
-  });
-}
-
-export function testArrayProperty(getItems: () => ServiceItem[], property: string) {
-  const items = getItems();
-  it(`each item has non-empty ${property} array`, () => {
-    items.forEach((item) => {
-      expect(Array.isArray(item[property])).toBe(true);
-      expect(item[property].length).toBeGreaterThan(0);
-    });
   });
 }
 

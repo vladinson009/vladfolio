@@ -4,6 +4,14 @@ import {
   fetchMostRecentProjects,
   Project,
 } from '.././projects.services';
+import {
+  testDescendingIdSort,
+  testIsArray,
+  testNonEmptyStringProperty,
+  testRequiredProperties,
+  testUniqueIds,
+  testValidLength,
+} from './shared-service-tests';
 
 describe('Projects services', () => {
   describe('mostRecentProject()', () => {
@@ -13,53 +21,24 @@ describe('Projects services', () => {
       result = fetchMostRecentProjects();
     });
 
-    it('returns an array of projects', () => {
-      expect(Array.isArray(result)).toBe(true);
-    });
-
-    it('returns exactly 3 most recent projects', () => {
-      expect(result).toHaveLength(3);
-    });
-
-    it('returns projects with required properties', () => {
-      result.forEach((project) => {
-        expect(project).toHaveProperty('id');
-        expect(project).toHaveProperty('name');
-        expect(project).toHaveProperty('tech');
-        expect(project).toHaveProperty('description');
-        expect(project).toHaveProperty('imgUrl');
-        expect(project).toHaveProperty('git');
-        expect(project).toHaveProperty('live');
-      });
-    });
-
+    testIsArray(() => result, 'projects');
+    testValidLength(() => result, 3);
+    testRequiredProperties(
+      () => result,
+      ['id', 'name', 'tech', 'description', 'imgUrl', 'git', 'live'],
+    );
+    testDescendingIdSort(() => result);
     it('each project has non-empty tech array', () => {
       result.forEach((project) => {
         expect(Array.isArray(project.tech)).toBe(true);
         expect(project.tech.length).toBeGreaterThan(0);
       });
     });
-
     it('each project has valid URLs', () => {
       result.forEach((project) => {
         expect(project.git).toMatch(/^https:\/\//);
         expect(project.live).toMatch(/^https:\/\//);
       });
-    });
-
-    it('sorted by descending id', () => {
-      const id1 = Number(result[0].id);
-      const id2 = Number(result[1].id);
-      const id3 = Number(result[2].id);
-
-      expect(id1).toBeGreaterThan(id2);
-      expect(id1).toBeGreaterThan(id3);
-
-      expect(id2).toBeGreaterThan(id3);
-      expect(id2).toBeLessThan(id1);
-
-      expect(id3).toBeLessThan(id1);
-      expect(id3).toBeLessThan(id2);
     });
   });
 
@@ -69,28 +48,17 @@ describe('Projects services', () => {
     beforeEach(() => {
       result = fetchAllProjects();
     });
+    testIsArray(() => result, 'projects');
 
-    it('returns an array of projects', () => {
-      expect(Array.isArray(result)).toBe(true);
-    });
+    testValidLength(() => result, 4);
+    testRequiredProperties(
+      () => result,
+      ['id', 'name', 'tech', 'description', 'imgUrl', 'git', 'live'],
+    );
+    testUniqueIds(() => result);
 
-    it('returns more than 3 projects', () => {
-      expect(result.length).toBeGreaterThan(3);
-    });
-
-    it('returns projects with required properties', () => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach((project) => {
-        expect(project).toHaveProperty('id');
-        expect(project).toHaveProperty('name');
-        expect(project).toHaveProperty('tech');
-        expect(project).toHaveProperty('description');
-        expect(project).toHaveProperty('imgUrl');
-        expect(project).toHaveProperty('git');
-        expect(project).toHaveProperty('live');
-      });
-    });
-
+    testNonEmptyStringProperty(() => result, 'name');
+    testNonEmptyStringProperty(() => result, 'description');
     it('each project has non-empty tech array', () => {
       expect(result.length).toBeGreaterThan(0);
       result.forEach((project) => {
@@ -104,30 +72,6 @@ describe('Projects services', () => {
       result.forEach((project) => {
         expect(project.git).toMatch(/^https:\/\//);
         expect(project.live).toMatch(/^https:\/\//);
-      });
-    });
-
-    it('returns no duplicate projects and IDs', () => {
-      expect(result.length).toBeGreaterThan(0);
-      const ids = result.map((p) => p.id);
-      const uniqueIds = new Set(ids);
-
-      expect(ids.length).toBe(uniqueIds.size);
-    });
-
-    it('all projects have non-empty names', () => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach((project) => {
-        expect(project.name).toBeTruthy();
-        expect(project.name.length).toBeGreaterThan(0);
-      });
-    });
-
-    it('all projects have non-empty descriptions', () => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach((project) => {
-        expect(project.description).toBeTruthy();
-        expect(project.description.length).toBeGreaterThan(0);
       });
     });
 

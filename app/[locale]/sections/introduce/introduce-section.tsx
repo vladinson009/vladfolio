@@ -13,7 +13,7 @@ export function IntroduceSection() {
       className="mt-8 flex flex-col items-center gap-10 md:flex-row"
     >
       {/* Left Side */}
-      <AuthorDescription />
+      <AuthorIntroduction />
 
       {/* Right Side */}
       <div className="flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md shrink">
@@ -23,7 +23,7 @@ export function IntroduceSection() {
     </Container>
   );
 }
-function AuthorDescription() {
+function AuthorIntroduction() {
   const t = useTranslations('HomePage');
 
   const description = t('description');
@@ -36,27 +36,8 @@ function AuthorDescription() {
 
   return (
     <div className="flex-2 flex flex-col gap-5">
-      <h1
-        className={`${classes['left-side-animation']} text-3xl text-center sm:text-4xl lg:text-5xl leading-tight`}
-        style={
-          {
-            '--animation-delay': `${0}s`,
-          } as React.CSSProperties
-        }
-      >
-        {heading}
-      </h1>
-      <p
-        data-testid="description"
-        className={`${classes['left-side-animation']} text-xl text-center sm:text-2xl lg:text-3xl text-muted-foreground leading-tight`}
-        style={
-          {
-            '--animation-delay': `${0.05}s`,
-          } as React.CSSProperties
-        }
-      >
-        {description}
-      </p>
+      <AuthorIntroductionHeading heading={heading} />
+      <AuthorIntroductionDescsription description={description} />
       <Quote
         className={classes['left-side-animation']}
         style={
@@ -70,6 +51,36 @@ function AuthorDescription() {
     </div>
   );
 }
+function AuthorIntroductionHeading({ heading }: { heading: React.ReactNode }) {
+  return (
+    <h1
+      className={`${classes['left-side-animation']} text-3xl text-center sm:text-4xl lg:text-5xl leading-tight`}
+      style={
+        {
+          '--animation-delay': `${0}s`,
+        } as React.CSSProperties
+      }
+    >
+      {heading}
+    </h1>
+  );
+  return;
+}
+function AuthorIntroductionDescsription({ description }: { description: string }) {
+  return (
+    <p
+      data-testid="description"
+      className={`${classes['left-side-animation']} text-xl text-center sm:text-2xl lg:text-3xl text-muted-foreground leading-tight`}
+      style={
+        {
+          '--animation-delay': `${0.05}s`,
+        } as React.CSSProperties
+      }
+    >
+      {description}
+    </p>
+  );
+}
 function AuthorProfilePhoto() {
   return (
     <img
@@ -80,7 +91,6 @@ function AuthorProfilePhoto() {
     />
   );
 }
-
 function AuthorBadges() {
   return (
     <div

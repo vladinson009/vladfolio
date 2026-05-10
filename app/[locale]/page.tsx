@@ -1,9 +1,9 @@
 import PageSeparator from '@/components/shared/page-separator';
 import { IntroduceSection } from './sections/introduce/introduce-section';
-import ProjectsSection from './sections/projects/projects-section';
+import { ProjectsSection } from './sections/projects/projects-section';
 import { useTranslations } from 'next-intl';
-import CertificatesSection from './sections/certificates/certificates-section';
-import SkillsSection from './sections/skills/skills-section';
+import { CertificatesSection } from './sections/certificates/certificates-section';
+import { SkillsSection } from './sections/skills/skills-section';
 
 export default function HomePage() {
   const t = useTranslations('PageSeparator');

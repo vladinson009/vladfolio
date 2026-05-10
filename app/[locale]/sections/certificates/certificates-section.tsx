@@ -27,7 +27,7 @@ type ImageDialogProps = {
   title: string;
 };
 
-export default function CertificatesSection() {
+export function CertificatesSection() {
   const certificates = fetchMostRecentCertificates();
 
   return (
