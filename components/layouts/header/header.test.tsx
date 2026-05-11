@@ -35,6 +35,8 @@ vi.mock('lucide-react', () => ({
   XIcon: mockSvgComponent('x-icon'),
   ChevronDown: mockSvgComponent('chevron-down-icon'),
   ArrowRightIcon: mockSvgComponent('arrow-right-icon'),
+  Sun: mockSvgComponent('sun'),
+  Moon: mockSvgComponent('moon'),
 }));
 
 // Helper to avoid repetition
@@ -124,10 +126,10 @@ describe('Header Component', () => {
 
   // ✅ Test 7: Right section has navigation and language components
   it('has navigation and language switcher in right section', () => {
-    const { container } = render(<Header />);
+    render(<Header />);
 
     // Find the flex container with gap-10
-    const rightSection = container.querySelector('.gap-10');
+    const rightSection = screen.getByTestId('nav-icons');
     expect(rightSection).toBeInTheDocument();
     expect(rightSection).toContainElement(screen.getByTestId('head-navigation'));
     expect(rightSection).toContainElement(screen.getByTestId('language-switcher'));

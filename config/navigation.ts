@@ -18,7 +18,7 @@ export const NAVIGATION_ITEMS = [
   },
   {
     key: 'home',
-    href: '/home',
+    href: '/',
   },
 ] as const;
 

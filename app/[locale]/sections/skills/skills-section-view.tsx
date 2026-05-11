@@ -1,4 +1,4 @@
-import ContainerWrapper from '@/components/shared/cards-container-wrapper/container-wrapper';
+import ContainerWrapper from '@/components/shared/container-wrapper/container-wrapper';
 import Container from '@/components/shared/container';
 import { Badge } from '@/components/ui/badge';
 import {

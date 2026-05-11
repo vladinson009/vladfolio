@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import Header from '@/components/layouts/header/header';
+import { ThemeProvider } from '@/components/theme-providre';
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-sans' });
 const geistSans = Geist({
@@ -47,6 +48,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         'h-full',
         'antialiased',
@@ -57,11 +59,19 @@ export default async function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider>
-          <div className="scroll-watcher"></div>
-          <Header />
-          {children}
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          themes={['light', 'dark', 'twitter']}
+        >
+          <NextIntlClientProvider>
+            <div className="scroll-watcher"></div>
+            <Header />
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

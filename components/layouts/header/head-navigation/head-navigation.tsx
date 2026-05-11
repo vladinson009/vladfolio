@@ -1,18 +1,20 @@
-'use client';
-import { MenuIcon, XIcon } from 'lucide-react';
+import { MenuIcon } from 'lucide-react';
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import { NAVIGATION_ITEMS } from '@/config/navigation';
 
 import classes from './head-navigation.module.css';
+
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 
 type HeadNavigation = {
   href: string;
@@ -21,7 +23,6 @@ type HeadNavigation = {
 
 export function HeadNavigation() {
   const t = useTranslations('Header');
-  const [open, setOpen] = useState<boolean>(false);
   const nav = NAVIGATION_ITEMS.map((item) => ({
     href: item.href,
     title: t(item.key),
@@ -30,55 +31,54 @@ export function HeadNavigation() {
     <>
       <DesktopNav nav={nav} />
 
-      <DropdownMenu open={open} onOpenChange={setOpen}>
-        <DropdownMenuTrigger
-          className={`${classes['nav-item']} flex sm:hidden`}
-          aria-label="Toggle mobile navigation"
-        >
-          <TriggerIcon open={open} />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="flex flex-col-reverse sm:hidden">
-          {nav.map((el) => (
-            <ListItem key={el.href} {...el} />
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <Sheet>
+        <SheetTrigger>
+          <TriggerIcon />
+        </SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle className="sr-only">Mobile navigation</SheetTitle>
+            <SheetDescription className="sr-only">
+              Mobile navigation
+            </SheetDescription>
+          </SheetHeader>
+          <div className="flex flex-col-reverse gap-5 items-center justify-center mx-auto my-auto">
+            {nav.map((el, index) => (
+              <ListItem key={el.href} {...el} index={index} />
+            ))}
+          </div>
+        </SheetContent>
+      </Sheet>
     </>
   );
 }
-function TriggerIcon({ open }: { open: boolean }) {
+function TriggerIcon() {
   return (
-    <div className="relative w-6 h-6">
-      <MenuIcon
-        className={`absolute transition-all duration-200
-          ${open ? 'opacity-0 rotate-90 scale-75' : 'opacity-100 rotate-0 scale-100'}
-        `}
-      />
-
-      <XIcon
-        className={`absolute transition-all duration-200
-          ${open ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-75'}
-        `}
-      />
+    <div data-testid="mobileButton" className="relative w-6 h-6 flex lg:hidden">
+      <MenuIcon className={classes['nav-item']} />
     </div>
   );
 }
-function ListItem(el: { href: string; title: string }) {
+function ListItem(el: { href: string; title: string; index: number }) {
   return (
-    <DropdownMenuItem asChild>
-      <Link href={el.href} className="cursor-pointer">
-        <div>
-          <span className="text-primary">#</span>
-          <span>{el.title}</span>
-        </div>
-      </Link>
-    </DropdownMenuItem>
+    <Link
+      href={el.href}
+      className={`${classes['nav-item']} cursor-pointer text-3xl`}
+      style={
+        {
+          '--animation-delay': `${(el.index + 1) * 0.1}s`,
+        } as React.CSSProperties
+      }
+    >
+      <span className="text-primary">#</span>
+      <span>{el.title}</span>
+    </Link>
   );
 }
 
 function DesktopNav({ nav }: { nav: HeadNavigation }) {
   return (
-    <nav className="hidden sm:flex">
+    <nav className="hidden lg:flex">
       <ul className="flex flex-row-reverse gap-3 bsg-red-400">
         {nav.map(({ href, title }, index) => (
           <li

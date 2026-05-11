@@ -5,6 +5,7 @@ import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import classes from './header.module.css';
+import { ToggleThemeBtn } from '@/components/toggle-theme-btn';
 
 export default function Header() {
   const t = useTranslations('Header');
@@ -19,9 +20,10 @@ export default function Header() {
             {t('portfolio')}
           </h1>
         </Link>
-        <div className="flex items-center gap-10">
+        <div data-testid="nav-icons" className="flex items-center gap-5">
           <HeadNavigation />
           <LanguageSwitcher />
+          <ToggleThemeBtn />
         </div>
       </Container>
     </div>
