@@ -83,9 +83,7 @@ describe('Nav Component', () => {
     const user = userEvent.setup();
     render(<HeadNavigation />);
 
-    const triggerButton = screen.getByRole('button', {
-      name: /toggle mobile navigation/i,
-    });
+    const triggerButton = screen.getByTestId('mobileButton');
 
     await user.click(triggerButton);
 
