@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 import { PropsWithChildren, useRef } from 'react';
-import ContainerWrapper from '@/components/shared/cards-container-wrapper/container-wrapper';
+import ContainerWrapper from '@/components/shared/container-wrapper/container-wrapper';
 import Container from '@/components/shared/container';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import classes from './certificates-section.module.css';

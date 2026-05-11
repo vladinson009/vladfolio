@@ -15,7 +15,7 @@ import classes from './projects-section.module.css';
 import { fetchMostRecentProjects, Project } from '@/services/projects.services';
 import { ExternalLinkIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import ContainerWrapper from '@/components/shared/cards-container-wrapper/container-wrapper';
+import ContainerWrapper from '@/components/shared/container-wrapper/container-wrapper';
 import { useRef } from 'react';
 import { CarouselButtons } from '@/components/shared/carousel-button';
 
