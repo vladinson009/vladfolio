@@ -7,6 +7,6 @@
 }
 @keyframes background-fade {
   to {
-    background-color: var(--color-primary);
+    background-color: var(--bg-color);
   }
 }
