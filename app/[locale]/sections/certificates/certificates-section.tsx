@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { PropsWithChildren } from 'react';
+'use client';
+import { PropsWithChildren, useRef } from 'react';
 import ContainerWrapper from '@/components/shared/cards-container-wrapper/container-wrapper';
 import Container from '@/components/shared/container';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
@@ -17,6 +18,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { CarouselButtons } from '@/components/shared/carousel-button';
 
 type CredentialsButtonProps = PropsWithChildren<{
   credentialsUrl: Certificate['credentialsUrl'];
@@ -29,21 +31,28 @@ type ImageDialogProps = {
 
 export function CertificatesSection() {
   const certificates = fetchMostRecentCertificates();
-
+  const containerRef = useRef<HTMLDivElement | null>(null);
   return (
     <ContainerWrapper>
-      <Container className="flex flex-col gap-8 md:flex-row md:gap-3">
+      <Container
+        ref={containerRef}
+        className="flex gap-8 md:gap-3 overflow-x-auto md:overflow-x-visible"
+      >
         {certificates.map((certificate) => (
           <CertificateCard key={certificate.id} certificate={certificate} />
         ))}
       </Container>
+      <CarouselButtons containerRef={containerRef} />
     </ContainerWrapper>
   );
 }
 
 function CertificateCard({ certificate }: { certificate: Certificate }) {
   return (
-    <Card className={`${classes['animate']} flex-1 pt-0`}>
+    <Card
+      data-card
+      className={`${classes['animate']} min-w-[85vw] md:min-w-auto md:flex-1 pt-0`}
+    >
       <ImageDialog
         id={certificate.id}
         imgUrl={certificate.imgUrl}
