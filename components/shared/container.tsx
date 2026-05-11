@@ -4,7 +4,7 @@ import type { ElementType, ReactNode } from 'react';
 type ContainerProps<T extends ElementType = 'div'> = {
   as?: T;
   children: ReactNode;
-} & Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'children'>;
+} & Omit<React.ComponentPropsWithRef<T>, 'as' | 'children'>;
 
 export default function Container<T extends ElementType = 'div'>(
   props: ContainerProps<T>,

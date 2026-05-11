@@ -3,7 +3,7 @@
   animation-timeline: view();
 
   animation-range-start: 100px;
-  animation-range-end: contain;
+  animation-range-end: 500px;
 }
 @keyframes background-fade {
   to {
